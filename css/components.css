@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Components - InBody Clinic
+   ========================================================================== */
+
+/* Eyebrow Label */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 0.85rem;
+}
+
+.eyebrow-dark {
+  color: var(--color-navy);
+  opacity: 0.8;
+}
+
+/* Section Title (Dual Color Accent) */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.section-title .accent {
+  color: var(--color-sage);
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.8rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-sage {
+  background-color: var(--color-sage);
+  color: #ffffff;
+  border: 1px solid var(--color-sage);
+}
+
+.btn-sage:hover {
+  background-color: var(--color-sage-hover);
+  border-color: var(--color-sage-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(138, 162, 155, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-navy);
+  border: 1px solid var(--color-navy);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-navy);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-arrow svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-arrow svg {
+  transform: translateX(4px);
+}
+
+/* Circular Arrow Button (Used in Service Cards) */
+.arrow-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--color-navy);
+  color: var(--color-navy);
+  background-color: transparent;
+  transition: all var(--transition-fast);
+}
+
+.arrow-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-fast);
+}
+
+.arrow-btn:hover {
+  background-color: var(--color-navy);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.arrow-btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Circle Icon Holder (Used in Services) */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-sage-soft);
+  color: var(--color-navy);
+  margin-bottom: 1.5rem;
+  transition: transform var(--transition-normal), background-color var(--transition-normal);
+}
+
+.icon-circle img,
+.icon-circle svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* Card Component */
+.card-service {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid transparent;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-subtle);
+  position: relative;
+}
+
+.card-service:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-sage-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-service:hover .icon-circle {
+  transform: scale(1.08);
+  background-color: #c2d2cd;
+}
+
+.card-service .card-title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 0.75rem;
+}
+
+.card-service .card-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+  flex-grow: 1;
+}
+
+/* Micro-animations / Scroll Reveal classes */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

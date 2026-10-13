@@ -1,0 +1,40 @@
+/* ==========================================================================
+   Design Tokens - InBody Clinic
+   Derived from Color Palette & Layout Specs
+   ========================================================================== */
+
+:root {
+  /* 6 Core Palette Colors */
+  --color-bg: #f7f6f2;
+  --color-surface: #ffffff;
+  --color-navy: #1f3859;
+  --color-sage: #8aa29b;
+  --color-sage-soft: #d0dcd8;
+  --color-border: #e8e8e6;
+
+  /* Functional & Derived Colors */
+  --color-sage-hover: #748d86;
+  --color-navy-hover: #162a43;
+  --color-text: var(--color-navy);
+  --color-text-muted: #536b82;
+
+  /* Typography */
+  --font-heading: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sizing & Spacing */
+  --container: 1200px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-soft: 0 10px 30px rgba(31, 56, 89, 0.08);
+  --shadow-hover: 0 15px 35px rgba(31, 56, 89, 0.12);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}

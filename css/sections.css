@@ -1,0 +1,943 @@
+/* ==========================================================================
+   Sections CSS - InBody Clinic
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. TOP BAR
+   -------------------------------------------------------------------------- */
+.topbar {
+  background-color: var(--color-sage);
+  color: #ffffff;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.topbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2.2rem;
+}
+
+.topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  transition: opacity var(--transition-fast);
+}
+
+.topbar-item:hover {
+  opacity: 0.85;
+}
+
+.topbar-item svg {
+  width: 14px;
+  height: 14px;
+  stroke: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   2. NAVBAR
+   -------------------------------------------------------------------------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--color-surface);
+  box-shadow: 0 1px 0 var(--color-border);
+  transition: box-shadow var(--transition-normal), background-color var(--transition-normal);
+}
+
+.navbar.is-scrolled {
+  box-shadow: 0 4px 20px rgba(31, 56, 89, 0.08);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  height: 84px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 2rem;
+}
+
+.navbar-brand img {
+  height: 48px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin-left: auto;
+  margin-right: 2.5rem;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.nav-link {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-navy);
+  letter-spacing: 0.02em;
+  position: relative;
+  padding: 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-sage);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-sage);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Dropdown Menu */
+.nav-item-dropdown {
+  position: relative;
+}
+
+.dropdown-arrow {
+  width: 12px;
+  height: 12px;
+  transition: transform var(--transition-fast);
+}
+
+.nav-item-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 260px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 0;
+  box-shadow: var(--shadow-hover);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-normal);
+  z-index: 100;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-link {
+  display: block;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.86rem;
+  color: var(--color-navy);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.dropdown-link:hover {
+  background-color: var(--color-bg);
+  color: var(--color-sage);
+  padding-left: 1.65rem;
+}
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1010;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-navy);
+  border-radius: 2px;
+  transition: all var(--transition-fast);
+}
+
+.nav-toggle.is-active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* --------------------------------------------------------------------------
+   3. HERO SECTION
+   -------------------------------------------------------------------------- */
+.section-hero {
+  position: relative;
+  background-color: var(--color-bg);
+  overflow: hidden;
+  min-height: clamp(560px, 54vw, 760px);
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.hero-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 75% center;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 28%, #000 100%);
+}
+
+.hero-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-bg) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content {
+  max-width: 520px;
+}
+
+.hero-title {
+  font-size: 3.6rem;
+  line-height: 1.1;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .accent {
+  display: block;
+  color: var(--color-sage);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 2.2rem;
+}
+
+.hero-cta {
+  margin-bottom: 3.2rem;
+}
+
+.hero-values {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.6rem;
+  border-top: none;
+  padding-top: 0;
+}
+
+.hero-value-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  flex: 0 0 auto;
+}
+
+.hero-value-icon svg {
+  width: 26px;
+  height: 26px;
+  color: var(--color-navy);
+  stroke: var(--color-navy);
+}
+
+.hero-value-title {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-navy);
+  line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   4. OUR SERVICES SECTION
+   -------------------------------------------------------------------------- */
+.section-services {
+  padding: 6.5rem 0;
+  background-color: var(--color-surface);
+  text-align: center;
+}
+
+.services-header {
+  max-width: 680px;
+  margin: 0 auto 4rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. THE INBODY DIFFERENCE SECTION
+   -------------------------------------------------------------------------- */
+.section-difference {
+  padding: 0;
+  background-color: var(--color-bg);
+}
+
+.difference-grid {
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.difference-visual {
+  position: relative;
+  min-height: 480px;
+  background-color: var(--color-surface);
+}
+
+.difference-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  opacity: 1;
+}
+
+.difference-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3.5rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  color: var(--color-navy);
+}
+
+.difference-overlay-title {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  line-height: 1.15;
+  color: var(--color-navy);
+}
+
+.difference-overlay-title .accent {
+  color: var(--color-sage);
+  font-style: italic;
+  display: block;
+}
+
+.difference-tagline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.difference-tagline-line {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color-sage);
+}
+
+.difference-tagline-text {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  line-height: 1.7;
+  color: var(--color-navy);
+  opacity: 0.85;
+}
+
+.difference-content {
+  background-color: var(--color-sage-soft);
+  padding: 4rem 4.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.difference-lead {
+  font-size: 0.95rem;
+  color: var(--color-navy);
+  line-height: 1.7;
+  margin-bottom: 2.8rem;
+  max-width: 580px;
+  opacity: 0.9;
+}
+
+.difference-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.difference-point-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.difference-point-icon {
+  width: auto;
+  height: auto;
+  background: none;
+  box-shadow: none;
+  color: var(--color-navy);
+}
+
+.difference-point-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--color-navy);
+}
+
+.difference-point-text h4 {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-navy);
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.difference-point-text p {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   6. TESTIMONIAL SECTION
+   -------------------------------------------------------------------------- */
+.section-testimonial {
+  position: relative;
+  background-color: var(--color-surface);
+  overflow: hidden;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 4.5rem 0;
+}
+
+.testimonial-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 68%;
+  height: 100%;
+  z-index: 1;
+}
+
+.testimonial-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 35%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 35%, #000 100%);
+}
+
+.testimonial-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32%;
+  height: 100%;
+  background: linear-gradient(to right, var(--color-surface) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.testimonial-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.testimonial-content {
+  max-width: 520px;
+}
+
+.testimonial-quote {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-navy);
+  line-height: 1.35;
+  margin: 0.8rem 0 1.8rem;
+}
+
+.testimonial-quote .quote-mark {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  color: var(--color-navy);
+  font-style: normal;
+  line-height: 1;
+  vertical-align: -0.1em;
+}
+
+.testimonial-author {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   7. CTA BANNER SECTION
+   -------------------------------------------------------------------------- */
+.section-cta-banner {
+  position: relative;
+  background-color: var(--color-surface);
+  overflow: hidden;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  padding: 4.5rem 0;
+}
+
+.cta-banner-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 65%;
+  z-index: 1;
+}
+
+.cta-banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, transparent 40%, rgba(255, 255, 255, 0.75) 58%, var(--color-surface) 72%, var(--color-surface) 100%);
+  z-index: 2;
+}
+
+.cta-banner-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cta-banner-content {
+  width: 100%;
+  max-width: 440px;
+  text-align: left;
+}
+
+.cta-banner-title {
+  font-size: 2.5rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.cta-banner-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  max-width: 380px;
+}
+
+.cta-btn-wrap {
+  display: flex;
+}
+
+/* --------------------------------------------------------------------------
+   8. FOOTER SECTION
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: var(--color-navy);
+  color: #ffffff;
+  padding: 4.5rem 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr 1.2fr;
+  gap: 3rem;
+  align-items: center;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-brand img {
+  height: 48px;
+  width: auto;
+  margin-bottom: 1rem;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.footer-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-menu a {
+  font-size: 0.86rem;
+  color: #ffffff;
+  opacity: 0.85;
+  transition: opacity var(--transition-fast), color var(--transition-fast);
+}
+
+.footer-menu a:hover {
+  opacity: 1;
+  color: var(--color-sage);
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: all var(--transition-fast);
+}
+
+.footer-social-link:hover {
+  background-color: var(--color-sage);
+  transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.footer-tagline-col {
+  text-align: right;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  padding-left: 2.5rem;
+}
+
+.footer-city {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
+.footer-motto {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-sage-soft);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  font-size: 0.78rem;
+  opacity: 0.65;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (Media Queries)
+   Breakpoints: 1200px / 992px / 768px / 480px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .section-hero {
+    min-height: auto;
+    padding: 3.5rem 0 0;
+    flex-direction: column;
+  }
+
+  .hero-media {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 2.5rem;
+  }
+
+  .hero-image {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 20%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 20%, #000 100%);
+  }
+
+  .hero-mask {
+    display: none;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .difference-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .difference-visual {
+    min-height: 380px;
+  }
+
+  .difference-content {
+    padding: 3.5rem 2.5rem;
+  }
+
+  .difference-points {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .section-testimonial {
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .testimonial-media {
+    width: 100%;
+    opacity: 0.22;
+  }
+
+  .testimonial-bg {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .testimonial-mask {
+    display: none;
+  }
+
+  .section-cta-banner {
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .cta-banner-overlay {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, var(--color-surface) 100%);
+  }
+
+  .cta-banner-container {
+    justify-content: flex-start;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .footer-tagline-col {
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    display: none; /* Hide top bar on mobile */
+  }
+
+  .navbar-container {
+    height: 70px;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: var(--color-surface);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform var(--transition-normal);
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin: 0;
+  }
+
+  .nav-menu.is-open {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.15rem;
+  }
+
+  .nav-item-dropdown .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding-left: 1rem;
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .navbar-actions #header-cta-btn {
+    padding: 0.6rem 1.1rem;
+    font-size: 0.72rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-values {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-value-item {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .difference-points {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .difference-content {
+    padding: 2.5rem 1.8rem;
+  }
+
+  .testimonial-quote {
+    font-size: 1.6rem;
+  }
+
+  .cta-banner-title {
+    font-size: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+}
