@@ -78,11 +78,13 @@
   transform: translateY(-2px);
 }
 
-.btn-arrow svg {
+.btn-arrow i {
+  display: inline-block;
+  font-size: 1rem;
   transition: transform var(--transition-fast);
 }
 
-.btn:hover .btn-arrow svg {
+.btn:hover .btn-arrow i {
   transform: translateX(4px);
 }
 
@@ -100,9 +102,9 @@
   transition: all var(--transition-fast);
 }
 
-.arrow-btn svg {
-  width: 16px;
-  height: 16px;
+.arrow-btn i {
+  font-size: 1.15rem;
+  line-height: 1;
   transition: transform var(--transition-fast);
 }
 
@@ -112,7 +114,7 @@
   transform: scale(1.05);
 }
 
-.arrow-btn:hover svg {
+.arrow-btn:hover i {
   transform: translateX(3px);
 }
 
@@ -130,10 +132,10 @@
   transition: transform var(--transition-normal), background-color var(--transition-normal);
 }
 
-.icon-circle img,
-.icon-circle svg {
-  width: 34px;
-  height: 34px;
+.icon-circle i {
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--color-navy);
 }
 
 /* Card Component */

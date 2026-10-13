@@ -62,7 +62,8 @@ inbody-clinic/
 │   └── sections.css      # style per-section + responsif
 ├── js/
 │   ├── main.js           # inisialisasi
-│   └── nav.js            # menu mobile & dropdown
+│   ├── nav.js            # menu mobile & mega-menu dropdown
+│   └── hero-slider.js    # carousel 3-slide hero, autoplay, kontrol & gestur
 ├── assets/
 │   ├── images/           # hero, difference, testimonial, cta (WebP)
 │   ├── icons/            # SVG ikon layanan
@@ -520,12 +521,12 @@ Gambar baru dari pengguna menggantikan aset sebelumnya. **Nama file target diper
 - Struktur folder (Bagian 4): tambahkan `hero-slider.js`.
 
 **Checklist**
-- [ ] Siapkan & optimalkan `hero-2.jpg` dan `hero-3.jpg` (crop tanpa teks).
-- [ ] Ubah markup hero menjadi 3 slide; slide 1 tidak berubah tampilan.
-- [ ] Tulis CSS layout per slide (kiri / kanan / atas) + fade sesuai arah.
-- [ ] Implementasi `js/hero-slider.js` (fade, autoplay, dot, panah, keyboard, swipe, reduced-motion).
-- [ ] Pastikan hanya ada satu `<h1>` dan atribut ARIA carousel benar.
-- [ ] Uji pada 1536, 1280, 1024, 768, 390px.
+- [x] Siapkan & optimalkan `hero-2.jpg` dan `hero-3.jpg` (crop tanpa teks).
+- [x] Ubah markup hero menjadi 3 slide; slide 1 tidak berubah tampilan.
+- [x] Tulis CSS layout per slide (kiri / kanan / atas) + fade sesuai arah.
+- [x] Implementasi `js/hero-slider.js` (fade, autoplay, dot, panah, keyboard, swipe, reduced-motion).
+- [x] Pastikan hanya ada satu `<h1>` dan atribut ARIA carousel benar.
+- [x] Uji pada 1536, 1280, 1024, 768, 390px.
 
 ---
 
@@ -570,12 +571,12 @@ Ukuran & warna diatur lewat CSS (`font-size`, `color: currentColor`) sehingga ik
 > Nama ikon di atas adalah usulan terdekat dengan desain; dapat disesuaikan setelah dilihat di browser. Logo (`assets/logo/logo.png`) **bukan ikon** dan tidak diganti.
 
 **Checklist**
-- [ ] Pasang stylesheet Phosphor (CDN) dan `preconnect`.
-- [ ] Ganti semua `<svg>` inline di `index.html` dengan elemen `<i class="ph-light …">` sesuai tabel.
-- [ ] Ganti `<img src="assets/icons/*.svg">` pada kartu Services; hapus file SVG lama yang tidak terpakai.
-- [ ] Sesuaikan CSS ukuran/warna ikon (`.icon-circle i`, `.hero-value-icon i`, `.arrow-btn i`, dll.); hapus aturan `svg` yang tidak terpakai.
-- [ ] Tambahkan `aria-hidden="true"` pada ikon dekoratif; `aria-label` pada tombol ikon.
-- [ ] Verifikasi tidak ada ikon kotak kosong (font gagal dimuat) dan konsol bersih.
+- [x] Pasang stylesheet Phosphor (CDN) dan `preconnect`.
+- [x] Ganti semua `<svg>` inline di `index.html` dengan elemen `<i class="ph-light …">` sesuai tabel.
+- [x] Ganti `<img src="assets/icons/*.svg">` pada kartu Services; hapus file SVG lama yang tidak terpakai.
+- [x] Sesuaikan CSS ukuran/warna ikon (`.icon-circle i`, `.hero-value-icon i`, `.arrow-btn i`, dll.); hapus aturan `svg` yang tidak terpakai.
+- [x] Tambahkan `aria-hidden="true"` pada ikon dekoratif; `aria-label` pada tombol ikon.
+- [x] Verifikasi tidak ada ikon kotak kosong (font gagal dimuat) dan konsol bersih.
 
 ---
 
@@ -628,11 +629,11 @@ Ukuran & warna diatur lewat CSS (`font-size`, `color: currentColor`) sehingga ik
 - `js/nav.js`: tambah toggle keyboard (`Esc`, `aria-expanded`) & accordion mobile.
 
 **Checklist**
-- [ ] Bangun markup mega-menu 4 kolom dengan isi sesuai desain.
-- [ ] Styling panel (radius, border, garis pemisah, tipografi serif/sans).
-- [ ] Posisi panel tengah & tidak keluar viewport (1280–1536px).
-- [ ] Aksesibilitas keyboard (`focus-within`, `Esc`, `aria-expanded`).
-- [ ] Versi mobile accordion.
+- [x] Bangun markup mega-menu 4 kolom dengan isi sesuai desain.
+- [x] Styling panel (radius, border, garis pemisah, tipografi serif/sans).
+- [x] Posisi panel tengah & tidak keluar viewport (1280–1536px).
+- [x] Aksesibilitas keyboard (`focus-within`, `Esc`, `aria-expanded`).
+- [x] Versi mobile accordion.
 
 ---
 
@@ -669,11 +670,11 @@ Ukuran & warna diatur lewat CSS (`font-size`, `color: currentColor`) sehingga ik
 - `css/sections.css`: tulis ulang `.footer`, `.footer-top`, `.footer-brand`, `.footer-nav`, `.footer-menu`, `.footer-socials`, `.footer-social-link`, `.footer-tagline-col`, `.footer-city`, `.footer-motto`; hapus `.footer-bottom`.
 
 **Checklist**
-- [ ] Susun ulang markup footer sesuai tata letak target.
-- [ ] Rapikan CSS grid, jarak, dan tipografi footer.
-- [ ] Ganti ikon sosial ke Phosphor (tanpa lingkaran).
-- [ ] Pindahkan copyright ke bawah logo; hapus `.footer-bottom`.
-- [ ] Uji responsif (1536 / 1280 / 1024 / 768 / 390px).
+- [x] Susun ulang markup footer sesuai tata letak target.
+- [x] Rapikan CSS grid, jarak, dan tipografi footer.
+- [x] Ganti ikon sosial ke Phosphor (tanpa lingkaran).
+- [x] Pindahkan copyright ke bawah logo; hapus `.footer-bottom`.
+- [x] Uji responsif (1536 / 1280 / 1024 / 768 / 390px).
 
 ---
 
@@ -700,3 +701,224 @@ Ukuran & warna diatur lewat CSS (`font-size`, `color: currentColor`) sehingga ik
 4. **Kontrol slider**: apakah panah kiri/kanan ditampilkan, atau cukup dot pagination (desain tidak menampilkan kontrol)?
 5. **Kecepatan autoplay** 6 detik – sesuai, atau ingin lebih lambat/cepat?
 6. **Teks footer**: desain menulis "All Right Reserved" (tanpa "s"); mengikuti desain atau dikoreksi menjadi "All Rights Reserved"? Teks deskripsi di kanan bawah footer lama dihapus – setuju?
+
+---
+
+## 12. Rencana Perbaikan Tampilan (Revisi 3)
+
+> [!NOTE]
+> Revisi 3 mencakup **3 pekerjaan**: (12.1) perbaikan **Slide 3** agar penuh seperti Slide 1 & 2 + **tombol slider di depan gambar**, (12.2) **animasi slider** bergeser dari kanan ke kiri, dan (12.3) **tata letak Footer** yang lebih rapi dan tidak terlalu penuh. Bagian lain (Topbar, Navbar, mega-menu, Services, Difference, Testimonial, CTA Banner) **tidak diubah**.
+
+### 12.0 Ringkasan Perubahan
+
+| # | Area | Kondisi sekarang | Target |
+|---|---|---|---|
+| 1 | Hero – Slide 3 | Foto hanya berupa strip tipis di bagian atas section, sisanya kosong (latar krem); tidak setinggi Slide 1 & 2 | Slide 3 **setinggi & seluas Slide 1 & 2**: foto memenuhi bagian bawah sampai tepi section, tanpa ruang kosong |
+| 2 | Hero – tombol slider | Tombol (panah + dot) tampak berada **di bawah/di luar gambar** karena slide 3 pendek | Tombol **selalu di depan gambar** (overlay, `z-index` di atas foto) pada ketiga slide |
+| 3 | Hero – animasi | Fade (opacity) | **Geser horizontal**: slide baru masuk dari **kanan** dan slide lama keluar ke **kiri** |
+| 4 | Footer | Grid 3 kolom dalam 1 baris yang padat (menu 5 link + ikon + tagline 2 baris + copyright dalam 1 blok) | Layout **2 tingkat** yang lega: baris utama (logo · menu · tagline) + baris bawah tipis (copyright · ikon sosial) |
+
+---
+
+### 12.1 Slide 3 Penuh & Tombol Slider di Depan Gambar
+
+**Akar masalah (hasil pemeriksaan kode saat ini)**
+
+| Temuan | Lokasi | Dampak |
+|---|---|---|
+| `.hero-slides` hanya punya `min-height`, sedangkan `.hero-slide` memakai `height: 100%` | `css/sections.css` (`.hero-slides`, `.hero-slide`) | Persentase tinggi terhadap `min-height` dihitung `auto`, sehingga slide aktif (`position: relative`) **mengecil mengikuti isi teksnya**. Slide 1 & 2 tampak penuh karena isinya tinggi; Slide 3 isinya pendek (teks di atas) → section ikut pendek |
+| `.hero-media--bottom` memakai `position: absolute; bottom: 0; height: 48%` | `css/sections.css` | Karena tinggi slide 3 mengecil, foto menjadi strip tipis dan tampak terpotong di bawah teks; sisanya kosong |
+| `.hero-controls` diletakkan `absolute; bottom: 2rem` relatif ke `.section-hero` (tinggi tetap), bukan ke foto | `css/sections.css` | Pada Slide 3, tombol jatuh di area kosong di bawah foto, terlihat "di luar gambar" |
+| Foto `hero-3.jpg` berukuran 1024×318 (rasio ±3.2:1) | `assets/images/hero-3.jpg` | Cocok untuk strip lebar; perlu dibuat mengisi area bawah (±55% tinggi hero) tanpa terlalu di-*crop* |
+
+**Perbaikan tata letak Slide 3 (desktop ≥ 992px)**
+
+```
++------------------------------------------------------------------+  ← tinggi sama dengan slide 1 & 2
+|  WOMEN'S HEALTH & WELLBEING                 ◌ Evidence-Based Care |
+|  Care Designed Around You.                  ♡ Personalised Treatm.|  ← area teks (±45%)
+|  deskripsi ...                              ⚇ A Holistic Approach |
+|  [ BOOK AN APPOINTMENT → ]                                        |
+|~~~~~~~~~~~~~~~~~ fade dari warna latar ~~~~~~~~~~~~~~~~~~~~~~~~~~~|
+|  [ foto terapis + rak produk, lebar penuh, sampai tepi bawah ]    |  ← area foto (±55%)
+|                        ( ‹  ● ● ▬  › )                           |  ← kontrol overlay di depan foto
++------------------------------------------------------------------+
+```
+
+| Aspek | Sekarang | Perbaikan |
+|---|---|---|
+| Tinggi slide | Mengikuti isi teks (±180px) | **Sama untuk semua slide** = `clamp(580px, 56vw, 780px)` (token yang sama dengan section) |
+| Cara menyamakan tinggi | `height: 100%` pada `.hero-slide` | `.hero-slides` menjadi **CSS grid satu sel**: `display: grid`; semua `.hero-slide` memakai `grid-area: 1 / 1`; `height: auto` (menghapus `position: absolute` / `inset` / `height: 100%`). Tinggi baris otomatis = `min-height` section atau slide tertinggi |
+| Foto | `height: 48%`, bawah | `.hero-media--bottom { height: 56%; width: 100%; bottom: 0; }` – melebar sampai tepi viewport (bukan terbatas container), `object-fit: cover; object-position: center 25%` |
+| Fade foto | `mask-image` `to bottom` 35% | Dipertahankan; naikkan area pudar ke ±30% agar transisi dari teks mulus |
+| Teks | `padding: 3.8rem 0 0` | Tetap di atas (`align-items: flex-start`), `z-index` di atas foto; beri `padding-bottom` agar tidak menimpa wajah terapis |
+| Resolusi foto | 1024×318 | Diregangkan ±1.4× pada layar 1440px. **Opsi**: pakai foto asli beresolusi lebih tinggi bila tersedia; bila tidak, tetap di-*crop* dari gambar sekarang + `image-rendering` default |
+| Mobile ≤ 992px | Foto 340px setelah teks (slide menyusut) | Slide mengisi tinggi yang sama dengan slide lain; `.hero-media--bottom { margin-top: auto; height: 340px }` sehingga **foto menempel di tepi bawah** dan tidak ada ruang kosong |
+
+**Tombol slider di depan gambar**
+
+| Aspek | Sekarang | Perbaikan |
+|---|---|---|
+| Posisi | `absolute; bottom: 2rem; left: 50%` di `.section-hero` | Tetap `absolute` di dalam `.section-hero` (pusat bawah), kini **di atas foto** karena foto Slide 3 mencapai tepi bawah; `z-index: 10` (di atas slide `2` & media `1`) |
+| Keterbacaan di atas foto | Panah putih + dot tembus pandang navy | Bungkus kontrol dalam **kapsul kaca**: `background: rgba(255,255,255,.72); backdrop-filter: blur(8px); padding: .5rem 1rem; border-radius: var(--radius-pill); box-shadow: var(--shadow-soft)` sehingga terbaca di foto terang/gelap |
+| Dot | Navy 25% / aktif sage | Non-aktif `rgba(31,56,89,.35)`, aktif pil sage (tetap sesuai palet) |
+| Panah | 36px, putih | 34–36px, hover navy; tetap `<button>` dengan `aria-label` |
+| Mobile ≤ 768px | Panah disembunyikan | Tetap: panah disembunyikan, kapsul hanya berisi dot, `bottom: 1rem` |
+
+**Perubahan file**
+- `css/sections.css`: ubah `.hero-slides` / `.hero-slide` ke grid satu sel; perbarui `.hero-media--bottom`, `.hero-mask--top`, `.hero-controls`; sesuaikan blok `@media (max-width: 992px)` (hapus `display: none` pada slide non-aktif, ganti dengan `visibility`).
+- `index.html`: tidak berubah struktur (kontrol sudah berada di dalam `.section-hero`); bila perlu tambahkan pembungkus `.hero-controls-inner` untuk kapsul kaca.
+
+---
+
+### 12.2 Animasi Slider: Bergeser Kanan → Kiri
+
+**Perilaku**
+
+| Aksi | Slide lama | Slide baru |
+|---|---|---|
+| Berikutnya (autoplay, panah ›, swipe kiri, dot ke slide lebih besar, `→`) | Keluar ke **kiri** (`translateX(-100%)`) | Masuk dari **kanan** (`translateX(100%) → 0`) |
+| Sebelumnya (panah ‹, swipe kanan, dot ke slide lebih kecil, `←`) | Keluar ke **kanan** | Masuk dari **kiri** (arah dibalik agar terasa natural; lihat Poin Diskusi #1) |
+| Dari slide 3 → slide 1 (putaran) | Keluar ke kiri | Slide 1 diposisikan dulu di kanan (tanpa transisi), lalu masuk dari kanan |
+
+- Durasi **700 ms**, easing `cubic-bezier(.65, 0, .25, 1)` (awal lambat – akhir halus); kedua slide bergerak bersamaan sehingga terlihat satu "film strip".
+- Konten (teks, tombol, nilai) ikut bergeser bersama foto karena transform diterapkan pada seluruh `.hero-slide`.
+- `.section-hero` tetap `overflow: hidden` agar slide yang berada di luar tidak terlihat/bergulir horizontal.
+
+**Rancangan teknis (kelas status, tanpa library)**
+
+```css
+.hero-slides { display: grid; min-height: clamp(580px, 56vw, 780px); }
+
+.hero-slide {
+  grid-area: 1 / 1;
+  transform: translateX(100%);          /* menunggu di kanan */
+  visibility: hidden;
+  transition: transform 700ms cubic-bezier(.65,0,.25,1),
+              visibility 0s linear 700ms; /* sembunyikan setelah selesai geser */
+}
+.hero-slide.is-active  { transform: translateX(0);     visibility: visible; transition-delay: 0s; z-index: 2; }
+.hero-slide.is-leaving { transform: translateX(-100%); visibility: visible; transition-delay: 0s; }
+/* arah balik (prev) */
+.hero-slides.is-reverse .hero-slide              { transform: translateX(-100%); }
+.hero-slides.is-reverse .hero-slide.is-leaving   { transform: translateX(100%);  }
+.hero-slide.no-anim { transition: none; }  /* penempatan awal sebelum masuk */
+```
+
+| Langkah di `js/hero-slider.js` (`goToSlide(index, direction)`) | Keterangan |
+|---|---|
+| 1. Tentukan arah (`next` = +1, `prev` = -1) | Dot: bandingkan `index` dengan `currentIndex`; putaran 3→1 tetap dianggap `next` |
+| 2. Tandai slide lama `is-leaving`, hapus `is-active` | Meluncur keluar |
+| 3. Slide baru: tambah `no-anim`, set posisi awal (kanan/kiri) → paksa *reflow* (`void el.offsetWidth`) → hapus `no-anim` → tambah `is-active` | Menjamin slide baru selalu mulai dari sisi yang benar, termasuk saat putaran |
+| 4. Setelah `transitionend` (atau `setTimeout` 750 ms sebagai cadangan) hapus `is-leaving` | Slide lama kembali ke posisi tunggu & `visibility: hidden` |
+| 5. Kunci `isAnimating` selama transisi | Cegah klik beruntun / autoplay bertabrakan |
+| 6. Perbarui `aria-hidden`, `aria-selected`, dot aktif seperti sebelumnya | Aksesibilitas tetap |
+| 7. `prefers-reduced-motion: reduce` | Tanpa geser: `transition: none` (pindah instan) dan autoplay tetap nonaktif |
+
+**Penyesuaian terkait**
+- Mobile ≤ 992px: hapus `display: none` pada slide non-aktif (merusak animasi); semua slide tetap tertumpuk di grid sel yang sama. Tinggi section = slide tertinggi; slide yang lebih pendek mendorong fotonya ke bawah dengan `margin-top: auto` sehingga tidak ada ruang kosong.
+- Elemen fokus pada slide tersembunyi tidak bisa di-*tab* (sudah ditangani oleh `visibility: hidden`).
+- Autoplay 6 detik, jeda saat hover/fokus: **tidak berubah**.
+- *Swipe*: tetap memicu transisi sama (tanpa efek menyeret jari).
+
+**Perubahan file**
+- `css/sections.css`: ganti aturan fade (`opacity` + `scale`) dengan aturan geser di atas; perbarui blok mobile.
+- `js/hero-slider.js`: tambah parameter arah, kelas `is-leaving` / `is-reverse` / `no-anim`, kunci `isAnimating`, `transitionend`.
+- `index.html`: tidak berubah.
+
+---
+
+### 12.3 Footer – Tata Letak Lebih Rapi & Tidak Terlalu Penuh
+
+**Diagnosa kondisi sekarang** (`.footer-container`: `grid 1.15fr 1.6fr 1fr`, `gap 3.5rem`)
+
+| Masalah | Penyebab |
+|---|---|
+| Terlalu penuh / sesak | Tiga kolom menampung 6 jenis elemen sekaligus: logo, copyright, 5 menu, 5 ikon, tagline 2 baris |
+| Menu mudah *wrap* tidak rapi | 5 link dengan `gap 2.5rem` + ikon di bawahnya berebut lebar kolom tengah (±1.6fr) |
+| Tagline sempit & bertumpuk | Teks uppercase dengan `letter-spacing` lebar pada kolom ±1fr cenderung terpecah menjadi 3–4 baris |
+| Tidak seimbang secara visual | Kolom kiri (logo + copyright) pendek, kolom tengah tinggi (menu + ikon), kolom kanan di tengah vertikal |
+
+**Target tata letak (desktop ≥ 992px) – 2 tingkat**
+
+```
++----------------------------------------------------------------------------------+
+|  [LOGO]       Home   About   Our Service   Our Clinic   Contact Us   | DOUBLE BAY | SYDNEY
+|                                                                       | A HEALTHIER YOU,
+|                                                                       | FOR WHAT'S NEXT
+|----------------------------------------------------------------------------------|  ← garis tipis putih 14%
+|  ©2026 InBody Clinic, All Right Reserved.                  (f) (tt) (✉) (wa) (ig) |
++----------------------------------------------------------------------------------+
+```
+
+| Aspek | Sekarang | Perbaikan |
+|---|---|---|
+| Struktur | `.footer-container` 3 kolom | **Dua baris**: `.footer-main` (logo · menu · tagline) dan `.footer-bar` (copyright · sosial) |
+| Baris utama | – | `display: grid; grid-template-columns: auto 1fr auto; align-items: center; column-gap: 3rem` – menu berada di tengah (`justify-self: center`) |
+| Logo | Tinggi 48px, kolom 1.15fr | Tinggi **44px**, kolom lebar `auto` (tidak melebar) |
+| Menu | `gap 2.5rem`, bisa *wrap* | Satu baris, `gap 2rem`, `font-size .85rem`, `white-space: nowrap`; *wrap* hanya di layar kecil |
+| Tagline | Dalam kolom sempit | Kolom `auto` di kanan dengan **garis vertikal** di kirinya (`padding-left 1.75rem`), teks rata kiri: baris 1 `DOUBLE BAY \| SYDNEY` (`.74rem`, spasi huruf `.16em`), baris 2 `A HEALTHIER YOU, FOR WHAT'S NEXT` (`.7rem`, spasi huruf `.1em`, `max-width ±260px` agar rapi 2 baris) |
+| Baris bawah | Copyright di bawah logo, sosial di bawah menu | `.footer-bar`: `display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; margin-top: 2rem; border-top: 1px solid rgba(255,255,255,.14)` – copyright **kiri**, ikon sosial **kanan** |
+| Ikon sosial | 1.35rem, gap 1.35rem, di kolom tengah | 1.3rem, `gap 1.25rem`, **tanpa lingkaran** (tetap), hover → sage; urutan tetap Facebook · TikTok · Email · WhatsApp · Instagram |
+| Copyright | `.74rem`, di bawah logo | `.72rem`, putih 70%, sejajar dengan ikon sosial |
+| Padding | `3.5rem 0 3rem` | `3.25rem 0 1.75rem` (lebih seimbang karena ada baris bawah) |
+| Latar & palet | Navy | Tetap navy, teks putih, aksen hover sage |
+
+**Responsif**
+
+| Lebar | Perilaku |
+|---|---|
+| ≤ 1200px | Kurangi `column-gap` menjadi `2rem`, menu `gap 1.5rem` |
+| ≤ 992px | `.footer-main` menjadi 1 kolom, rata kiri, urutan: logo → menu (boleh *wrap*, `gap 1rem 1.75rem`) → tagline (garis vertikal diganti **garis horizontal tipis** di atasnya). `.footer-bar` berubah `flex-direction: column`, `align-items: flex-start`, `gap 1.25rem` (sosial di atas copyright) |
+| ≤ 480px | Menu 2–3 baris, ikon sosial tetap satu baris, logo 40px |
+
+**Perubahan file**
+- `index.html`: bungkus ulang `<footer>` menjadi `.footer-main` (`.footer-brand`, `.footer-menu`, `.footer-tagline-col`) dan `.footer-bar` (`.footer-copyright`, `.footer-socials`). Isi teks & tautan **tidak berubah**.
+- `css/sections.css`: tulis ulang `.footer`, `.footer-container` → `.footer-main`, tambah `.footer-bar`; sesuaikan `.footer-brand-col` / `.footer-center-col` (dihapus), `.footer-tagline-*`, dan blok responsif (≤1200 / ≤992 / ≤480px).
+
+> [!NOTE]
+> Perubahan ini menggantikan tata letak footer 3 kolom pada **11.4** (copyright di bawah logo dan ikon sosial di bawah menu) karena terbukti terlalu penuh. Tagline, ikon Phosphor tanpa lingkaran, dan palet tetap sama.
+
+---
+
+### 12.4 Checklist & Urutan Eksekusi
+
+**Urutan eksekusi**
+1. Hero: ubah `.hero-slides` ke grid satu sel (menyamakan tinggi semua slide) → perbaiki Slide 3 (12.1).
+2. Hero: kontrol di depan gambar (kapsul kaca) (12.1).
+3. Hero: animasi geser kanan → kiri di CSS + `js/hero-slider.js` (12.2).
+4. Footer: ubah markup & CSS 2 tingkat (12.3).
+5. Uji responsif (1536 / 1280 / 1024 / 768 / 390px) & konsol browser; perbarui checklist.
+
+**Checklist – Hero (12.1 & 12.2)**
+- [x] Ubah `.hero-slides` / `.hero-slide` menjadi grid satu sel; tinggi semua slide sama.
+- [x] Slide 3: foto mengisi ±56% bagian bawah, lebar penuh, menempel di tepi bawah; tanpa ruang kosong.
+- [x] Slide 3: fade atas foto & jarak teks–foto rapi di 1536 / 1280 / 1024px.
+- [x] Kontrol (panah + dot) berada **di depan** foto pada ketiga slide (kapsul kaca, `z-index` benar).
+- [x] Animasi geser: slide baru dari kanan, slide lama keluar ke kiri (700 ms).
+- [x] Putaran slide 3 → 1 tetap masuk dari kanan; arah dibalik untuk "sebelumnya".
+- [x] Kunci klik beruntun (`isAnimating`) & `transitionend` dengan cadangan timeout.
+- [x] `prefers-reduced-motion`: tanpa animasi geser.
+- [x] Mobile ≤ 992px: semua slide penuh, foto menempel bawah, animasi geser tetap berjalan.
+- [x] Tetap hanya satu `<h1>`; ARIA carousel, dot, keyboard, swipe, autoplay tetap berfungsi.
+
+**Checklist – Footer (12.3)**
+- [x] Susun ulang markup: `.footer-main` + `.footer-bar`.
+- [x] CSS grid `auto 1fr auto`, menu tengah satu baris, tagline rapi 2 baris dengan garis vertikal.
+- [x] Baris bawah: copyright kiri, ikon sosial kanan, garis pemisah tipis.
+- [x] Responsif 1200 / 992 / 480px (garis vertikal → horizontal, menu *wrap* rapi).
+- [x] Verifikasi tidak ada teks menumpuk atau terpotong; konsol bersih.
+
+**Kriteria selesai Revisi 3**
+- Slide 3 setinggi dan sepenuh Slide 1 & 2; foto memenuhi bagian bawah tanpa area kosong.
+- Tombol slider tampil di depan gambar pada seluruh slide dan terbaca jelas.
+- Perpindahan slide bergeser dari kanan ke kiri dengan mulus, termasuk putaran 3 → 1.
+- Footer terlihat lega, seimbang, dan tidak sesak di desktop, tablet, dan mobile.
+- Bagian lain tidak berubah; tidak ada error pada konsol.
+
+**Poin diskusi (mohon konfirmasi sebelum eksekusi)**
+1. **Arah "sebelumnya"**: saat menekan panah ‹ / swipe kanan, apakah arah geser **dibalik** (masuk dari kiri, rekomendasi) atau tetap kanan → kiri?
+2. **Posisi tombol**: tetap satu kapsul di **tengah bawah** (rekomendasi), atau panah diletakkan di **tepi kiri & kanan** vertikal tengah dengan dot di tengah bawah?
+3. **Foto Slide 3**: apakah tersedia foto asli beresolusi lebih tinggi (min. ±1600 px lebar) agar tidak terlihat buram saat dilebarkan penuh?
+4. **Footer**: apakah layout 2 tingkat (logo · menu · tagline di atas; copyright · sosial di bawah) sesuai, atau ada referensi gambar footer yang diinginkan?
+

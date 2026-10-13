@@ -3,10 +3,14 @@
  */
 
 import { initNav } from './nav.js';
+import { initHeroSlider } from './hero-slider.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // Initialize Navigation
   initNav();
+
+  // Initialize Hero Slider
+  initHeroSlider();
 
   // Scroll Reveal Animations with IntersectionObserver
   const animateElements = document.querySelectorAll('[data-animate]');
