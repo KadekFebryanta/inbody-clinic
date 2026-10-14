@@ -922,3 +922,179 @@ Ukuran & warna diatur lewat CSS (`font-size`, `color: currentColor`) sehingga ik
 3. **Foto Slide 3**: apakah tersedia foto asli beresolusi lebih tinggi (min. ±1600 px lebar) agar tidak terlihat buram saat dilebarkan penuh?
 4. **Footer**: apakah layout 2 tingkat (logo · menu · tagline di atas; copyright · sosial di bawah) sesuai, atau ada referensi gambar footer yang diinginkan?
 
+---
+
+## 13. Rencana Halaman About (Revisi 4)
+
+> [!NOTE]
+> Revisi 4 menambah **halaman baru `about.html`** ("Meet Your Therapist – Saila Insua López") berdasarkan gambar desain. Halaman Home (`index.html`) hanya berubah pada **tautan menu** (About → `about.html`). Topbar, Navbar, dan Footer memakai **komponen yang sama** dengan Home agar konsisten.
+
+### 13.0 Analisis Gambar Desain
+
+Halaman terdiri dari **6 blok** dari atas ke bawah:
+
+| # | Blok | Latar | Isi (hasil analisis gambar) |
+|---|---|---|---|
+| 1 | Topbar | Sage `#8aa29b` | Pin *New South Wales, Double Bay* · email *Sailainsua@gmail.com* · telepon *+61 424 912 490* (ikon putih, teks putih kecil) |
+| 2 | Navbar | Putih | Logo kiri · menu: Home, **About (aktif)**, Our Services ▾, Our Clinic, Contact Us · tombol sage pill **BOOK AN APPOINTMENT →** |
+| 3 | **Meet Your Therapist** (intro) | Krem `#f7f6f2` | Kolom kiri: eyebrow, H1 nama, subjudul, paragraf, 3 baris keahlian berpanah, 2 tombol. Kolom kanan: foto potret dengan sudut membulat |
+| 4 | **Stats band** | Sage | 4 kartu berbingkai tipis (outline putih), angka/judul besar serif + keterangan kecil |
+| 5 | **Experience & expertise** | Putih | Kolom kiri: judul 2 warna + paragraf. Kolom kanan: grid 2×2 kartu abu terang dengan ikon |
+| 6 | Footer | Navy `#1f3859` | Logo, menu 5 tautan, ikon sosial, tagline *DOUBLE BAY \| SYDNEY – A HEALTHIER YOU, FOR WHAT'S NEXT*, copyright |
+
+**Pemetaan terhadap sistem desain yang sudah ada** (`css/tokens.css`)
+
+| Elemen desain | Token / komponen yang dipakai |
+|---|---|
+| Warna latar krem, sage, navy, abu | `--color-bg`, `--color-sage`, `--color-navy`, `--color-border` (abu kartu ≈ `#e8e8e6`) |
+| Judul serif (H1/H2, angka stats) | `--font-heading` (Cormorant Garamond) |
+| Teks, label, tombol | `--font-body` (Montserrat) |
+| Eyebrow *MEET YOUR THERAPIST ———* | `.eyebrow.eyebrow-dark` + garis pendek (`::after`) |
+| Tombol *VIEW SERVICES →* | `.btn.btn-sage` + `.btn-arrow` (sudah ada) |
+| Judul 2 warna *Experience & expertise* | `.section-title` + `.accent` (**varian non-italic**, lihat 13.5) |
+| Sudut foto & kartu | `--radius-md` (foto), `--radius-sm` (kartu) |
+| Ikon | Phosphor Light (sudah dimuat di `index.html`) |
+
+### 13.1 Struktur File
+
+```
+inbody-clinic/
+├── about.html                  ← BARU
+├── css/about.css               ← BARU (hanya gaya khusus halaman About)
+├── assets/images/about-saila.jpg   ← BARU (foto Saila, lihat poin diskusi 1)
+├── index.html                  ← ubah tautan menu "About"
+├── js/main.js                  ← tidak berubah (dipakai ulang)
+└── js/nav.js, hero-slider.js   ← tidak berubah
+```
+
+- `about.html` memuat `tokens.css → base.css → components.css → sections.css → about.css` dan `js/main.js` (`type="module"`). `initHeroSlider()` sudah aman karena ada pengecekan `if (!heroSection) return;`.
+- Topbar, Navbar (+ mega-menu), dan Footer disalin dari `index.html` (markup identik); perbedaan hanya pada tautan & kelas aktif.
+- `<title>`: *About Saila Insua López | Spain-trained Physiotherapist – InBody Clinic Sydney*; satu `<h1>` (nama Saila); meta description & Open Graph sendiri; JSON-LD `Person` (jobTitle *Physiotherapist*, worksFor *InBody Clinic*).
+
+### 13.2 Navigasi (Home ↔ About)
+
+| Lokasi | Sekarang | Perubahan |
+|---|---|---|
+| `index.html` – menu *About* | `#difference` | `about.html` |
+| `about.html` – menu *Home* | – | `index.html` (logo juga ke `index.html`) |
+| `about.html` – menu *About* | – | `class="nav-link active"` + `aria-current="page"` |
+| Menu *Our Clinic*, *Contact Us*, tombol *Book an Appointment* | `#difference`, `#contact` | di About menuju `index.html#difference`, `index.html#contact` |
+| Tautan dropdown *Our Services* | `#services` | `index.html#services` |
+| Footer *About* | – | `about.html` |
+
+### 13.3 Blok 3 – Meet Your Therapist (`.about-intro`)
+
+**Layout desktop**: `container`, grid 2 kolom `1fr 1.1fr`, `gap 4rem`, `align-items: center`, padding `4rem 0`, latar `--color-bg`.
+
+| Elemen | Spesifikasi |
+|---|---|
+| Eyebrow | `MEET YOUR THERAPIST` + garis sage pendek 56px di kanan (`::after`), `.75rem`, spasi huruf `.22em` |
+| H1 | **Saila Insua López** – Cormorant Garamond 600, `clamp(2.6rem, 4vw, 3.4rem)`, navy |
+| Subjudul | *Spain-trained physiotherapist* – serif `1.45rem`, **sage** |
+| Paragraf | *With over 20 years of clinical experience, Saila specialises in women's health, dermatofunctional therapy and advanced lymphatic care.* – `.95rem`, `max-width 440px`, navy, `line-height 1.6` |
+| Daftar keahlian (`<ul class="about-skills">`) | 3 baris, tiap baris: ikon · label · panah `ph-caret-right`; garis pemisah `1px solid --color-border` atas & bawah; padding `.9rem 0`; hover: geser panah 4px + label sage |
+| Ikon baris | **Women's Health** → `ph-flower-lotus` · **Dermatofunctional Therapy** → `ph-waves` · **Advanced Lymphatic Care** → `ph-drop` (sage, `1.25rem`) |
+| Tombol utama | `.btn.btn-sage.btn-arrow` – **VIEW SERVICES →** → `index.html#services` |
+| Tautan sekunder | `✉ Contact Saila` (`ph-envelope-simple` + teks Montserrat navy `.95rem`, tanpa bingkai; hover → sage) → `mailto:` / `index.html#contact` |
+| Foto | `about-saila.jpg`, rasio **±4:3** (≈ 415×310), `object-fit: cover`, `object-position: center`, `border-radius: var(--radius-md)`, `box-shadow: var(--shadow-soft)`; `width/height` eksplisit, `loading="eager"` + `fetchpriority="high"`, `alt="Saila Insua López, Spain-trained physiotherapist, in the InBody Clinic"` |
+
+Animasi: kolom kiri & foto memakai `data-animate` (fade-up yang sudah ada), foto tertunda 120 ms.
+
+### 13.4 Blok 4 – Stats Band (`.about-stats`)
+
+**Layout**: latar sage; `container`; grid 4 kolom, `gap 1.25rem`; padding `3rem 0`.
+
+| Kartu | Judul (serif besar) | Keterangan |
+|---|---|---|
+| 1 | **20+** | Years of Clinical experience |
+| 2 | **Spain trained** | Physiotherapist |
+| 3 | **Sydney** | InBody Clinic |
+| 4 | **Clinical Tutor** | Mentoring healthcare students |
+
+- Kartu: `border: 1px solid rgba(255,255,255,.55)`, `border-radius: 4px`, `padding: 2.25rem 1rem`, tinggi sama (`min-height 100px`), isi dipusatkan.
+- Judul: Cormorant Garamond 600, putih, `clamp(1.8rem, 2.6vw, 2.4rem)`; keterangan: Montserrat `.72rem`, putih 85%.
+- Hover: latar `rgba(255,255,255,.08)` + naik 3px (`--transition-normal`).
+- Markup semantik: `<ul>` dengan 4 `<li>`; angka **20+** boleh dianimasikan *count-up* (opsional, tidak wajib).
+
+### 13.5 Blok 5 – Experience & Expertise (`.about-expertise`)
+
+**Layout**: latar putih, `container`, grid 2 kolom `1fr 1.25fr`, `gap 4rem`, `align-items: center`, padding `5rem 0`.
+
+| Elemen | Spesifikasi |
+|---|---|
+| Judul | `Experience` (navy) + baris kedua `& expertise` (**sage, tegak/non-italic**) – `.section-title`, `clamp(2.8rem, 4.5vw, 3.8rem)`; varian `.accent--upright { font-style: normal; font-weight: 600 }` di `about.css` |
+| Paragraf | *Advanced manual therapy, Vodder and Leduc lymphatic drainage, and INDIBA® radiofrequency technology.* – `.95rem`, `max-width 420px` |
+| Grid kartu | `grid-template-columns: 1fr 1fr`, `gap 1rem` |
+
+**Kartu keahlian** (`.expertise-card`): latar abu terang `#e8e8e6`, `border-radius 8px`, padding `1.4rem 1.25rem`, layout flex: ikon kiri (`1.6rem`, abu-sage `#8aa29b` 80%) · teks kanan.
+
+| # | Judul (Montserrat 700, navy `.9rem`) | Deskripsi (serif/abu `.8rem`, `#8b9aa0`) | Ikon Phosphor |
+|---|---|---|---|
+| 1 | Post-surgical recovery | Collaborating with Sydney surgeons to support recovery. | `ph-stethoscope` |
+| 2 | Lymphatic therapy | Advanced Vodder and Leduc techniques. | `ph-waves` |
+| 3 | Women's life stages | Fertility, pregnancy, postpartum and hormonal support. | `ph-gender-female` |
+| 4 | Tissue rehabilitation | Connective tissue care and recovery. | `ph-plant` |
+
+- Hover: `translateY(-4px)`, `--shadow-soft`, ikon → navy.
+- Catatan kontras: deskripsi abu muda pada kartu abu terang kurang terbaca (≈ 2.9:1). **Disarankan** memakai `--color-text-muted` `#536b82` (≈ 5.1:1) untuk deskripsi agar memenuhi WCAG AA – visual tetap lembut.
+- Posisi kartu dirapikan sejajar presisi 2×2 (`align-items: stretch`, tinggi kartu sama `height: 100%`, tanpa offset `translateY`).
+
+### 13.6 Blok 6 – Footer
+
+- Memakai **footer 2 tingkat dari 12.3** (`.footer-main` + `.footer-bar`) tanpa perubahan CSS.
+- Tautan: Home → `index.html`, About → `about.html`, Our Service → `index.html#services`, Our Clinic → `index.html#difference`, Contact Us → `index.html#contact`.
+
+> [!NOTE]
+> Gambar desain memperlihatkan footer 3 kolom lama (copyright di bawah logo, ikon sosial di bawah menu). Karena Revisi 3 sudah menggantinya menjadi 2 tingkat yang lebih lega, rancangan ini **mengikuti footer yang sekarang berlaku** agar konsisten di seluruh situs (lihat poin diskusi 3).
+
+### 13.7 Responsif
+
+| Lebar | Perilaku |
+|---|---|
+| ≥ 1200px | Layout seperti desain (container 1200px) |
+| ≤ 1200px | `.about-intro` gap `3rem`; stats gap `1rem` |
+| ≤ 992px | `.about-intro` → 1 kolom: **foto di atas teks** (`order: -1`, tinggi `min(60vw, 380px)`); `.about-expertise` → 1 kolom (judul → paragraf → grid kartu); stats → **2×2** |
+| ≤ 768px | Padding section dikurangi (`3rem 0`); H1 `2.4rem`; kartu keahlian tetap 2 kolom |
+| ≤ 480px | Stats 2×2 dengan font lebih kecil (`1.5rem`); kartu keahlian → **1 kolom**; tombol *View Services* & *Contact Saila* ditumpuk, lebar penuh; tanpa efek `translateY` pada kartu |
+
+Aksesibilitas: `prefers-reduced-motion` mematikan animasi hover/entrance; semua tautan memiliki *focus ring* (gaya global); ikon dekoratif `aria-hidden="true"`; satu `<h1>`, `<h2>` untuk "Experience & expertise", `<h3>` untuk judul kartu.
+
+### 13.8 Urutan Eksekusi
+
+1. Siapkan aset foto `about-saila.jpg` (crop dari gambar desain bila foto asli belum ada).
+2. Buat `about.html`: salin Topbar/Navbar/Footer, atur tautan & status aktif (13.2).
+3. Bangun `.about-intro` (13.3) + `css/about.css` bagian dasar.
+4. Bangun `.about-stats` (13.4).
+5. Bangun `.about-expertise` + 4 kartu (13.5).
+6. Perbarui tautan menu *About* di `index.html` (13.2).
+7. Uji responsif (1536 / 1280 / 1024 / 768 / 390px), keyboard, konsol; perbarui checklist.
+
+**Checklist – About (13.1 – 13.8)**
+- [x] Siapkan `assets/images/about-saila.jpg` (±1200 px lebar, dikompres < 150 KB).
+- [x] Buat `about.html` (meta SEO, OG, JSON-LD, satu `<h1>`, ID unik pada elemen interaktif).
+- [x] Tautan menu: Home ↔ About bekerja di kedua halaman; *About* aktif di `about.html`.
+- [x] Topbar & Navbar (+ mega-menu, menu mobile) berfungsi di `about.html`.
+- [x] `.about-intro`: eyebrow, H1, subjudul, paragraf, 3 baris keahlian, 2 tombol, foto.
+- [x] `.about-stats`: 4 kartu outline pada latar sage.
+- [x] `.about-expertise`: judul 2 warna + grid 2×2 kartu dengan ikon Phosphor.
+- [x] Footer 2 tingkat dengan tautan yang benar.
+- [x] Responsif 1200 / 992 / 768 / 480px; tidak ada teks menumpuk atau terpotong.
+- [x] Kontras teks memenuhi AA; fokus keyboard terlihat; konsol bersih.
+- [x] Halaman Home tidak berubah selain tautan *About*.
+
+**Kriteria selesai Revisi 4**
+- `about.html` tampil sesuai gambar desain pada desktop, dan tersusun rapi pada tablet & mobile.
+- Gaya konsisten dengan Home (palet navy/sage/krem, Cormorant Garamond + Montserrat, ikon Phosphor).
+- Navigasi antar-halaman berfungsi dua arah; menu *About* aktif di halaman About.
+- Tidak ada error pada konsol; halaman Home tidak mengalami regresi.
+
+**Poin diskusi (mohon konfirmasi sebelum eksekusi)**
+1. **Foto Saila**: apakah tersedia foto asli beresolusi tinggi (min. ±1200 px lebar) untuk `about-saila.jpg`? Bila tidak, foto akan di-*crop* dari gambar desain (kualitas lebih rendah).
+2. **Kontak berbeda**: desain menulis email **Sailainsua@gmail.com** dan telepon **+61 424 912 490**, sedangkan `index.html` memakai `hello@inbodyclinic.com` dan `+61 424 912 400`. Mana yang benar? Apakah Topbar di **kedua halaman** disamakan?
+3. **Footer**: ikuti footer 2 tingkat yang sekarang (rekomendasi), atau pakai footer 3 kolom seperti pada gambar About?
+4. **Tautan tombol**: *View Services* → `index.html#services` dan *Contact Saila* → `mailto:Sailainsua@gmail.com` atau `index.html#contact`? Apakah baris keahlian (Women's Health dst.) perlu tautan ke halaman layanan?
+5. **Menu "Our Clinic"**: saat ini mengarah ke `#difference` di Home. Apakah akan dibuat halaman terpisah nanti, atau tetap?
+6. **Kartu stats**: apakah angka **20+** perlu animasi *count-up* saat tampil di layar?
+7. **Teks bahasa**: konten tetap bahasa Inggris seperti desain (rekomendasi)?
+
+

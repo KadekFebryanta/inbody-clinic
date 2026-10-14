@@ -1,0 +1,432 @@
+/* ==========================================================================
+   About Page Styles - InBody Clinic
+   Meet Your Therapist: Saila Insua López
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Meet Your Therapist (Intro Section)
+   -------------------------------------------------------------------------- */
+.about-intro {
+  background-color: var(--color-bg);
+  padding: 4.5rem 0;
+}
+
+.about-intro-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-intro-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Eyebrow with decorative dash */
+.about-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.about-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 56px;
+  height: 1.5px;
+  background-color: var(--color-sage);
+}
+
+.about-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.12;
+  margin-bottom: 0.45rem;
+  letter-spacing: -0.01em;
+}
+
+.about-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--color-sage);
+  margin-bottom: 1.35rem;
+}
+
+.about-bio {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-navy);
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+/* 3 Specialisation Rows with carets */
+.about-skills {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.25rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  max-width: 440px;
+}
+
+.about-skill-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.about-skill-item:last-child {
+  border-bottom: none;
+}
+
+.about-skill-link {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 0.95rem 0;
+  color: var(--color-navy);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.about-skill-icon {
+  font-size: 1.35rem;
+  color: var(--color-sage);
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.about-skill-label {
+  flex: 1;
+  transition: color var(--transition-fast);
+}
+
+.about-skill-arrow {
+  font-size: 1rem;
+  color: var(--color-sage);
+  line-height: 1;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.about-skill-link:hover .about-skill-label {
+  color: var(--color-sage-hover);
+}
+
+.about-skill-link:hover .about-skill-arrow {
+  transform: translateX(4px);
+  color: var(--color-navy);
+}
+
+.about-skill-link:hover .about-skill-icon {
+  color: var(--color-navy);
+}
+
+/* Call-to-actions row */
+.about-intro-actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.about-contact-link i {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.about-contact-link:hover {
+  color: var(--color-sage);
+}
+
+/* Photo wrapper */
+.about-intro-media {
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo-wrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  line-height: 0;
+  width: 100%;
+}
+
+.about-photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+/* --------------------------------------------------------------------------
+   2. Stats Band Section
+   -------------------------------------------------------------------------- */
+.about-stats {
+  background-color: var(--color-sage);
+  padding: 3rem 0;
+}
+
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-stat-card {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 4px;
+  padding: 2.25rem 1.25rem;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all var(--transition-normal);
+}
+
+.about-stat-card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  transform: translateY(-3px);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 2.6vw, 2.4rem);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.35;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   3. Experience & Expertise Section
+   -------------------------------------------------------------------------- */
+.about-expertise {
+  background-color: var(--color-surface);
+  padding: 5rem 0;
+}
+
+.about-expertise-container {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-expertise-title {
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+/* Upright accent variant for section title */
+.accent--upright {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-sage);
+}
+
+.about-expertise-desc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-navy);
+  max-width: 420px;
+}
+
+/* Grid of 4 expertise cards */
+.about-expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.expertise-card {
+  background-color: #e8e8e6;
+  border-radius: 8px;
+  padding: 1.5rem 1.35rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+  height: 100%;
+  box-sizing: border-box;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.expertise-card-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.expertise-card-icon i {
+  font-size: 1.6rem;
+  color: var(--color-sage);
+  opacity: 0.9;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+
+.expertise-card:hover .expertise-card-icon i {
+  color: var(--color-navy);
+}
+
+.expertise-card-content {
+  flex: 1;
+}
+
+.expertise-card-title {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-bottom: 0.35rem;
+}
+
+.expertise-card-desc {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .about-intro-container {
+    gap: 3rem;
+  }
+  .about-expertise-container {
+    gap: 3rem;
+  }
+  .about-stats-grid {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-intro-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-intro-media {
+    order: -1;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .about-expertise-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .about-expertise-intro {
+    max-width: 100%;
+  }
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-intro {
+    padding: 3.25rem 0;
+  }
+  .about-expertise {
+    padding: 3.5rem 0;
+  }
+  .about-name {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  .about-stat-card {
+    padding: 1.5rem 0.75rem;
+    min-height: 95px;
+  }
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  .about-expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .about-intro-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  .about-intro-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  .about-contact-link {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-stat-card,
+  .expertise-card,
+  .about-skill-link,
+  .btn,
+  .about-contact-link {
+    transition: none !important;
+    transform: none !important;
+  }
+  [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
