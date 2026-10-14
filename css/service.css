@@ -1,0 +1,678 @@
+/* ==========================================================================
+   Service Page Template Styles - InBody Clinic
+   Clinical Cellulite Remodelling & Service Pages
+   ========================================================================== */
+
+:root {
+  --svc-gray: #e8e8e6;
+  --svc-line: #d9d9d6;
+  --color-sage-deep: #5f7a73;
+}
+
+/* --------------------------------------------------------------------------
+   Shared Section Typography & Utility
+   -------------------------------------------------------------------------- */
+.svc-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.3rem, 3.6vw, 2.9rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.svc-title .accent {
+  color: var(--color-sage);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.svc-title-center {
+  text-align: center;
+}
+
+/* Button Navy (CTA Band & Service Accents) */
+.btn-navy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--color-navy);
+  color: #ffffff;
+  border: 1px solid var(--color-navy);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  padding: 0.95rem 2.2rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-navy i {
+  font-size: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-navy:hover {
+  background-color: var(--color-navy-hover);
+  border-color: var(--color-navy-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(31, 56, 89, 0.25);
+}
+
+.btn-navy:hover i {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   1. Hero Section (.svc-hero)
+   -------------------------------------------------------------------------- */
+.svc-hero {
+  background-color: var(--color-bg);
+  padding: 4rem 0 4.5rem;
+  position: relative;
+}
+
+.svc-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.svc-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.svc-hero-content .eyebrow {
+  margin-bottom: 1.15rem;
+}
+
+.svc-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 4vw, 3.25rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  line-height: 1.15;
+  margin-bottom: 0;
+}
+
+.svc-hero-title .accent {
+  color: var(--color-sage);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.svc-hero-sublabel {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  opacity: 0.7;
+  margin: 1.35rem 0 0.65rem;
+}
+
+.svc-hero-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-navy);
+  max-width: 540px;
+  margin: 0;
+}
+
+.svc-hero-btn {
+  margin-top: 1.75rem;
+}
+
+.svc-hero-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.75rem 0 0;
+}
+
+.svc-hero-point-item {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.svc-hero-point-item i {
+  font-size: 1.15rem;
+  color: var(--color-sage);
+  flex-shrink: 0;
+}
+
+.svc-hero-point-item span {
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  line-height: 1.35;
+  color: var(--color-navy);
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.svc-hero-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background-color: #f0eee9;
+  line-height: 0;
+}
+
+.svc-hero-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.svc-hero-media:hover .svc-hero-img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   2. Targeted Indications Section (.svc-indications)
+   -------------------------------------------------------------------------- */
+.svc-indications {
+  background-color: var(--color-surface);
+  padding: 5rem 0;
+}
+
+.svc-indications-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.svc-indications-media {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  background-color: #f0eee9;
+  line-height: 0;
+}
+
+.svc-indications-img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.svc-indications-media:hover .svc-indications-img {
+  transform: scale(1.02);
+}
+
+.svc-indications-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-indications-content .eyebrow {
+  color: var(--color-sage);
+  margin-bottom: 0.75rem;
+}
+
+.svc-indications-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--color-navy);
+  max-width: 480px;
+  margin: 0.85rem 0 1.75rem;
+}
+
+.svc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.svc-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.95rem 0;
+  border-bottom: 1px solid var(--svc-line);
+  transition: border-color var(--transition-fast);
+}
+
+.svc-list li:first-child {
+  border-top: 1px solid var(--svc-line);
+}
+
+.svc-list-num {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  color: var(--color-sage-deep);
+  width: 2rem;
+  flex-shrink: 0;
+}
+
+.svc-list-text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--color-navy);
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.svc-list li:hover {
+  border-bottom-color: var(--color-sage);
+}
+
+.svc-list li:hover .svc-list-text {
+  color: var(--color-sage-hover);
+}
+
+/* --------------------------------------------------------------------------
+   3. Adapted Protocols / Types Section (.svc-types)
+   -------------------------------------------------------------------------- */
+.svc-types {
+  background-color: var(--svc-gray);
+  padding: 5rem 0 5.5rem;
+  text-align: center;
+}
+
+.svc-types .eyebrow {
+  color: var(--color-sage);
+  margin-bottom: 0.75rem;
+}
+
+.svc-types .svc-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  margin-bottom: 0;
+}
+
+.svc-types-desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--color-sage-deep);
+  max-width: 520px;
+  margin: 1.15rem auto 2.75rem;
+}
+
+.svc-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: stretch;
+}
+
+.svc-type-card {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 2.25rem 1.75rem;
+  box-shadow: var(--shadow-subtle);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.svc-type-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.svc-type-num {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-sage-deep);
+  margin-bottom: 0.4rem;
+}
+
+.svc-type-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--color-navy);
+  margin: 0.4rem 0 0.75rem;
+  line-height: 1.2;
+}
+
+.svc-type-desc {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--color-sage-deep);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. The Treatment & What to Expect (.svc-treatment)
+   -------------------------------------------------------------------------- */
+.svc-treatment {
+  background-color: var(--color-surface);
+  padding: 5rem 0 4.5rem;
+}
+
+.svc-treatment .svc-title {
+  font-size: clamp(2.4rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  margin-bottom: 3rem;
+}
+
+.svc-treatment-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3.5rem;
+  align-items: stretch;
+}
+
+.svc-panel {
+  background-color: #ffffff;
+  border: 1px solid #ececea;
+  border-radius: 8px;
+  box-shadow: var(--shadow-soft);
+  padding: 2.25rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-panel-title {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.9rem;
+  color: var(--color-navy);
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.svc-panel-sub {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-sage-deep);
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.svc-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.svc-steps li {
+  background-color: var(--svc-gray);
+  border-radius: 3px;
+  min-height: 3.6rem;
+  padding: 0.8rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.svc-step-num {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--color-navy);
+  width: 2rem;
+  flex-shrink: 0;
+}
+
+.svc-step-text {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-navy);
+  font-weight: 500;
+}
+
+.svc-outcomes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.svc-outcomes li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.svc-outcome-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(138, 162, 155, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-sage-deep);
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.svc-outcome-text p {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-navy);
+  margin: 0;
+}
+
+.svc-outcome-text strong {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.svc-quote {
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--color-navy);
+  opacity: 0.85;
+  max-width: 760px;
+  margin: 2.75rem auto 0;
+  font-style: normal;
+  padding: 0 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   5. Discuss your Body Contouring CTA Band (.svc-cta)
+   -------------------------------------------------------------------------- */
+.svc-cta {
+  background-color: var(--color-sage-soft);
+  padding: 3rem 0;
+}
+
+.svc-cta-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.svc-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.svc-cta-title .accent {
+  color: var(--color-sage);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.svc-cta-desc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--color-navy);
+  margin: 0.5rem 0 0;
+  max-width: 480px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  .svc-hero-grid {
+    gap: 3rem;
+  }
+  .svc-indications-grid {
+    gap: 3.5rem;
+  }
+  .svc-treatment-grid {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .svc-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.75rem;
+  }
+  .svc-hero-media {
+    max-width: 600px;
+    width: 100%;
+  }
+  .svc-hero-img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .svc-indications-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .svc-indications-media {
+    order: -1;
+    max-width: 520px;
+    width: 100%;
+  }
+  .svc-indications-img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .svc-treatment-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .svc-types-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .svc-type-card {
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .svc-hero,
+  .svc-indications,
+  .svc-types,
+  .svc-treatment {
+    padding: 3.5rem 0;
+  }
+
+  .svc-hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-br {
+    display: none;
+  }
+
+  .svc-types-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+
+  .svc-cta-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .btn-navy {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .svc-hero-points {
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .svc-panel {
+    padding: 1.75rem 1.25rem;
+  }
+  .svc-steps li {
+    min-height: 3.2rem;
+    padding: 0.75rem 1rem;
+    gap: 0.85rem;
+  }
+
+  .svc-hero-btn,
+  .btn-navy {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Accessibility & Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .btn-navy,
+  .btn-navy i,
+  .svc-hero-img,
+  .svc-indications-img,
+  .svc-type-card,
+  .svc-list li,
+  .svc-list-text {
+    transition: none !important;
+    transform: none !important;
+  }
+}

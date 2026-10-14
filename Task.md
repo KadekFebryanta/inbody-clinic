@@ -1474,3 +1474,298 @@ inbody-clinic/
 6. **Teks "Emergency? Call us"**: tetap sesuai desain, atau diubah (mis. _Call us_) karena klinik fisioterapi bukan layanan gawat darurat?
 7. **Konsistensi kontak**: Topbar Home masih memakai `hello@inbodyclinic.com` / `+61 424 912 400` sedangkan About & Contact memakai `Sailainsua@gmail.com` / `+61 424 912 490`. Apakah Topbar **Home** disamakan (di luar lingkup rancangan ini kecuali Anda setuju)?
 8. **Field Subject**: tetap input teks bebas seperti desain, atau diganti pilihan layanan (dropdown)?
+
+---
+
+## 15. Rencana Halaman Layanan: Clinical Cellulite Remodelling (Revisi 6)
+
+> [!NOTE]
+> Revisi 6 menambah **halaman baru `cellulite-remodelling.html`** (kategori _Body Contouring_ → _Clinical Cellulite Remodelling_ pada mega-menu) berdasarkan gambar desain. Halaman dibuat sebagai **templat halaman layanan** (kelas berawalan `svc-`, file `css/service.css`) agar 11 halaman layanan lain di mega-menu dapat memakai struktur yang sama tanpa menulis ulang CSS. Topbar, Navbar, dan Footer memakai komponen yang sama dengan halaman lain.
+
+### 15.0 Analisis Gambar Desain
+
+Gambar berukuran kecil (±407 px lebar); semua ukuran di bawah dikonversi ke skala `container` 1200 px (faktor ≈ 3.25). Halaman terdiri dari **7 blok**:
+
+| #   | Blok                      | Latar                       | Isi singkat                                                                     | Tinggi desktop (±) |
+| --- | ------------------------- | --------------------------- | ------------------------------------------------------------------------------- | ------------------ |
+| 1   | Topbar                    | Sage                        | Sama dengan About/Contact                                                       | 40 px              |
+| 2   | Navbar                    | Putih                       | **Our Services (aktif)**; tombol _Book an Appointment →_                        | 80 px              |
+| 3   | **Hero layanan**          | Krem `#f7f6f2`              | Kiri: eyebrow, H1 4 baris, paragraf, tombol, 3 poin kecil. Kanan: foto          | ±620 px            |
+| 4   | **Ideal If You Notice**   | Putih                       | Kiri: foto 2 terapis. Kanan: eyebrow, H2, paragraf, daftar bernomor 01–05       | ±715 px            |
+| 5   | **Different Types…**      | Abu terang `#e8e8e6`        | Eyebrow, H2 2 baris, paragraf terpusat, 3 kartu putih                           | ±585 px            |
+| 6   | **The Treatment & …**     | Putih                       | H2 2 baris terpusat, 2 kartu (Clinical Protocol · Treatment Approaches), kutipan | ±890 px            |
+| 7   | **CTA band** + Footer     | Sage-soft `#d0dcd8` / Navy  | _Discuss your Body Contouring_ + tombol navy _Contact the Clinic →_             | ±175 px            |
+
+### 15.1 Transkripsi Teks (persis seperti gambar)
+
+> [!IMPORTANT]
+> Teks berikut dibaca dari gambar beresolusi rendah. Item bertanda ⚠ kurang terbaca / tampak tidak konsisten dan **perlu konfirmasi** (lihat poin diskusi).
+
+**Blok 3 – Hero**
+
+| Elemen            | Teks                                                                                                                                                                                                                                |
+| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Eyebrow           | `CLINICAL CELLULITE REMODELLING`                                                                                                                                                                                                    |
+| H1 (4 baris)      | `Treatment for` / `Cellulite, Fluid` / `Retention &` _`Tissue`_ / _`Congestion`_ (kata _Tissue Congestion_ sage miring)                                                                                                            |
+| Label kecil       | `INBODY CLINIC · BODY CONTOURING`                                                                                                                                                                                                   |
+| Paragraf (4 baris)| _Cellulite is rarely just fat. It is often associated with poor circulation, lymphatic stagnation, and connective tissue fibrosis. When fluids accumulate and connective tissue becomes rigid, the skin may develop visible dimpling and uneven texture_ |
+| Tombol            | `LEARN MORE →` (sage)                                                                                                                                                                                                               |
+| 3 poin kecil ⚠    | ikon + teks 2 baris: (1) ⚠ _Care is rarely…_ (2) _Clinically guided care_ (3) _Gently considered approach_ — teks pertama tidak terbaca                                                                                             |
+
+**Blok 4 – Ideal If You Notice**
+
+| Elemen   | Teks                                                                                                                                      |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Eyebrow  | `TARGETED INDICATIONS`                                                                                                                    |
+| H2       | `Ideal If` _`You Notice`_                                                                                                                 |
+| Paragraf | _Cellulite is rarely just fat. It is often associated with poor circulation, lymphatic stagnation, and connective tissue fibrosis_       |
+| Daftar   | `01` Visible cellulite · `02` Swollen or heavy legs · `03` Fluid retention · `04` Uneven skin texture · `05` ⚠ stubborn areas (huruf kecil di gambar → ditulis _Stubborn areas_) |
+
+**Blok 5 – Different Types of Cellulite We Address**
+
+| Elemen   | Teks                                                                                                                              |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Eyebrow  | `ADAPTED PROTOCOLS`                                                                                                               |
+| H2       | `Different Types of` / _`Cellulite We Address`_ (baris 2 sage miring)                                                             |
+| Paragraf | _The protocol is adapted to address different types of cellulite, working on the entire tissue environment to progressively remodel the skin._ |
+| Kartu 1  | `01` · _Edematous Cellulite_ · ⚠ _Never intended to be painful, ensuring maximum comfort during your recovery._                   |
+| Kartu 2  | `02` · _Fibrous Cellulite_ · ⚠ _Carefully adjusted to your specific surgery, individual needs, and healing stage._                |
+| Kartu 3  | `03` · _Hormonal Cellulite_ · ⚠ _Safely supports tissue recovery while respecting your surgical structures._                      |
+
+**Blok 6 – The Treatment & What to Expect**
+
+| Elemen         | Teks                                                                                                                                                                       |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| H2             | `The Treatment &` / _`What to Expect`_                                                                                                                                      |
+| Kartu kiri     | Judul _Clinical Protocol_ · sub _The treatment combines:_ · `01` Clinical lymphatic drainage · `02` Connective tissue massage · `03` INDIBA radiofrequency to stimulate circulation and collagen · `04` ⚠ Targeted botanical formulations from CELInetic International |
+| Kartu kanan    | Judul _Treatment Approaches_ · sub _Treatment Outcome & Focus_ · **Headline:** Restoring Tissue Health · ⚠ **Deskripsi:** This treatment works on the entire tissue environment, improving circulation and reducing congestion to progressively remodel the skin. · ⚠ **Hasil:** Over time, tissues feel lighter, smoother, and less congested. |
+| Kutipan        | _"The treatment is gentle, rhythmic, and highly specific, allowing the nervous system to regulate while circulation improves."_                                              |
+
+**Blok 7 – CTA band**
+
+| Elemen   | Teks                                                                                          |
+| -------- | --------------------------------------------------------------------------------------------- |
+| H2       | `Discuss your` _`Body Contouring`_ (kata kedua sage miring)                                   |
+| Paragraf | _Ask how our clinical therapies can support circulation, skin elasticity, and natural body renewal._ |
+| Tombol   | `Contact the Clinic →` (kapsul **navy**, teks putih, tanpa huruf kapital)                     |
+
+### 15.2 Struktur Layout & Wireframe (desktop ≥ 993px)
+
+```
++--------------------------------------------------------------------------------+
+| TOPBAR / NAVBAR  (Our Services ▾ = aktif)                                      |
++--------------------------------------------------------------------------------+
+| .svc-hero  (krem)                                                              |
+|  CLINICAL CELLULITE REMODELLING             +-----------------------------+    |
+|  Treatment for                              |                             |    |
+|  Cellulite, Fluid                           |   FOTO TORSO (glow merah)   |    |
+|  Retention & Tissue                         |   rasio ±5:4, sudut bulat   |    |
+|  Congestion                                 |                             |    |
+|  INBODY CLINIC · BODY CONTOURING            +-----------------------------+    |
+|  paragraf (4 baris)                                                            |
+|  (LEARN MORE →)                                                                |
+|  ♡ teks   ✧ teks   ◌ teks                                                      |
++--------------------------------------------------------------------------------+
+| .svc-indications  (putih)                                                      |
+|  +-------------------+  gap 4.5rem   TARGETED INDICATIONS                      |
+|  |                   |               Ideal If You Notice                       |
+|  |  FOTO 2 TERAPIS   |               paragraf                                  |
+|  |  rasio ±9:10      |               ───────────────────────────               |
+|  |                   |               01  Visible cellulite                     |
+|  |                   |               02  Swollen or heavy legs   ...           |
+|  +-------------------+               05  Stubborn areas                        |
++--------------------------------------------------------------------------------+
+| .svc-types  (abu #e8e8e6)               ADAPTED PROTOCOLS                      |
+|                   Different Types of / Cellulite We Address                    |
+|                          paragraf terpusat (2 baris)                           |
+|   +-----------------+   +-----------------+   +-----------------+              |
+|   | 01              |   | 02              |   | 03              |              |
+|   | Edematous       |   | Fibrous         |   | Hormonal        |              |
+|   | Cellulite       |   | Cellulite       |   | Cellulite       |              |
+|   | deskripsi       |   | deskripsi       |   | deskripsi       |              |
+|   +-----------------+   +-----------------+   +-----------------+              |
++--------------------------------------------------------------------------------+
+| .svc-treatment (putih)           The Treatment & / What to Expect              |
+|   +---------------------------+  gap 3.5rem  +----------------------------+    |
+|   | Clinical Protocol         |              | Treatment Approaches       |    |
+|   | The treatment combines:   |              | Treatment Outcome & Focus  |    |
+|   | [01  Clinical lymphatic ] |              |  ◉ Headline: ...           |    |
+|   | [02  Connective tissue  ] |              |  ∿ Deskripsi: ...          |    |
+|   | [03  INDIBA ...         ] |              |  ☰ Hasil: ...              |    |
+|   | [04  Targeted botanical ] |              |                            |    |
+|   +---------------------------+              +----------------------------+    |
+|        “The treatment is gentle, rhythmic, and highly specific, ...”           |
++--------------------------------------------------------------------------------+
+| .svc-cta (sage-soft)  Discuss your Body Contouring          (Contact the Clinic →) |
+|                       Ask how our clinical therapies ...                       |
++--------------------------------------------------------------------------------+
+| FOOTER (2 tingkat, sama dengan halaman lain)                                   |
++--------------------------------------------------------------------------------+
+```
+
+**Prinsip struktur**
+
+| Prinsip                  | Penerapan                                                                                                         |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| Container & grid         | `container` 1200px; tiap blok memakai grid sendiri; padding vertikal section `5rem 0` (hero `4rem 0 4.5rem`)      |
+| Ritme warna latar        | krem → putih → abu → putih → sage-soft → navy (selang-seling agar blok mudah dibedakan)                           |
+| Hierarki heading         | 1 `<h1>` (hero) → `<h2>` per blok (4 buah) → `<h3>` judul kartu                                                  |
+| Pola judul 2 warna       | Kelas `.svc-title` + `.accent` (sage, miring) – dipakai pada H1 & semua H2, konsisten dengan Home/About           |
+| Semantik daftar          | Daftar indikasi = `<ol>`; kartu tipe = `<ul>`; baris protokol = `<ol>`                                           |
+| Templat dapat dipakai ulang | Semua kelas `svc-*`; isi per layanan hanya mengganti teks/gambar                                              |
+
+### 15.3 Struktur File
+
+```
+inbody-clinic/
+├── cellulite-remodelling.html          ← BARU
+├── css/service.css                     ← BARU (templat gaya halaman layanan, awalan svc-)
+├── assets/images/cellulite-hero.jpg    ← BARU (foto torso, lihat poin diskusi 1)
+├── assets/images/cellulite-consult.jpg ← BARU (foto 2 terapis, lihat poin diskusi 1)
+├── index.html / about.html / contact.html ← ubah tautan mega-menu "Clinical Cellulite Remodelling"
+└── js/main.js, nav.js                  ← tidak berubah (dipakai ulang)
+```
+
+- `cellulite-remodelling.html` memuat `tokens → base → components → sections → service.css` dan `js/main.js` (animasi `data-animate`, menu).
+- Topbar/Navbar/Footer disalin dari `contact.html`. Menu **Our Services** diberi kelas `active` (tombol dropdown) dan tautan *Clinical Cellulite Remodelling* di mega-menu diberi `aria-current="page"`.
+- SEO: `<title>` _Clinical Cellulite Remodelling Sydney | Cellulite & Fluid Retention Treatment – InBody Clinic Double Bay_; meta description (±155 karakter); Open Graph; JSON-LD `Service` (`serviceType` _Cellulite remodelling_, `provider` InBody Clinic, `areaServed` Double Bay, Sydney).
+
+### 15.4 Blok 3 – Hero Layanan (`.svc-hero`)
+
+**Layout**: `container`, grid 2 kolom `1.05fr 1fr`, `gap 3.5rem`, `align-items: center`, latar `--color-bg`, padding `4rem 0 4.5rem`.
+
+| Elemen            | Spesifikasi (agar hasil sama dengan gambar)                                                                                                                      |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Eyebrow           | `.eyebrow.eyebrow-dark`, `.72rem`, spasi huruf `.22em`, `margin-bottom 1.25rem`                                                                                  |
+| H1                | Cormorant Garamond 600, `clamp(2.6rem, 4vw, 3.2rem)` (≈ 3rem), `line-height 1.15`, navy; **pemenggalan baris tetap 4 baris** dengan `<br>` setelah _Treatment for_, _Cellulite, Fluid_, dan _Retention & Tissue_ (`<br>` disembunyikan ≤ 768px agar mengalir wajar); _Tissue Congestion_ = `<em class="accent">` |
+| Label kecil       | `INBODY CLINIC · BODY CONTOURING`, Montserrat 500 `.66rem`, spasi huruf `.14em`, navy 70%, `margin: 1.5rem 0 .5rem`                                              |
+| Paragraf          | `.9rem`, `line-height 1.65`, `max-width 540px` (membentuk 4 baris), navy                                                                                          |
+| Tombol            | `.btn.btn-sage.btn-arrow` – **LEARN MORE →** (`href="#treatment"`), `margin-top 1.75rem`                                                                          |
+| 3 poin kecil      | `<ul class="svc-hero-points">`, flex 3 kolom `gap 1.5rem`, `margin-top 1.75rem`; tiap item: ikon Phosphor Light `1.1rem` sage (`ph-heart`, `ph-seal-check`, `ph-hand-heart`) + teks `.66rem` 2 baris navy 80%, `line-height 1.35` |
+| Foto (`.svc-hero-media`) | `cellulite-hero.jpg`, `aspect-ratio 5 / 4`, `object-fit cover`, `object-position center 30%`, `border-radius var(--radius-lg)`, `box-shadow var(--shadow-soft)`; `width/height` eksplisit, `fetchpriority="high"`; `alt="Close-up of a woman's abdomen with a soft red glow highlighting the area of tissue congestion"` |
+
+### 15.5 Blok 4 – Ideal If You Notice (`.svc-indications`)
+
+**Layout**: latar putih, `container`, grid 2 kolom `0.9fr 1fr`, `gap 4.5rem`, `align-items: center`, padding `5rem 0`.
+
+| Elemen   | Spesifikasi                                                                                                                                                      |
+| -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Foto     | `cellulite-consult.jpg`, `aspect-ratio 9 / 10` (≈ 520×575), `object-fit cover`, `border-radius var(--radius-sm)` (8px), `box-shadow var(--shadow-subtle)`; `alt="Two clinicians in navy scrubs reviewing a treatment plan together"` |
+| Eyebrow  | `TARGETED INDICATIONS` – `.eyebrow` warna sage (bukan navy), `.7rem`                                                                                             |
+| H2       | **Ideal If** _You Notice_ – serif 600 `clamp(2.3rem, 3.6vw, 2.9rem)`, `.accent` pada _You Notice_                                                                |
+| Paragraf | `.88rem`, `line-height 1.65`, `max-width 460px`, `margin 1rem 0 1.75rem`                                                                                          |
+| Daftar   | `<ol class="svc-list">`: tiap `<li>` flex, `gap 1.5rem`, `padding .95rem 0`, `border-bottom 1px solid #d9d9d6` (baris pertama juga `border-top`); nomor `01–05` Montserrat 500 `.75rem` sage-deep, lebar tetap `2rem`; label `.92rem` navy |
+| Hover    | baris: label → sage-hover, garis bawah sage (`--transition-fast`) — hanya efek halus, tanpa pergeseran tata letak                                                 |
+
+### 15.6 Blok 5 – Different Types of Cellulite We Address (`.svc-types`)
+
+**Layout**: latar `#e8e8e6`, padding `5rem 0 5.5rem`, rata tengah.
+
+| Elemen   | Spesifikasi                                                                                                                                       |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Eyebrow  | `ADAPTED PROTOCOLS` – sage, `.7rem`, spasi huruf `.22em`                                                                                          |
+| H2       | Baris 1 navy **Different Types of**, baris 2 sage miring _Cellulite We Address_ (`<br>`); serif 600 `clamp(2.4rem, 4vw, 3.2rem)`, `line-height 1.12` |
+| Paragraf | `.85rem`, warna `--color-sage-deep`, `max-width 520px`, `margin: 1.25rem auto 2.75rem`, 2 baris                                                    |
+| Grid     | `.svc-types-grid`: `grid-template-columns: repeat(3, 1fr)`, `gap 1.75rem`, `list-style none`, kartu **setinggi sama** (`align-items: stretch`)     |
+| Kartu    | Latar putih, `border-radius 4px`, `padding 2.25rem 1.75rem`, `box-shadow var(--shadow-subtle)`, rata tengah                                       |
+| Isi kartu| Nomor `01–03` Montserrat 500 `.9rem` sage-deep → judul (`<h3>`) serif **miring** 600 `1.6rem` navy, `margin .6rem 0 .75rem` → deskripsi `.78rem`, `line-height 1.6`, sage-deep |
+| Hover    | `translateY(-4px)` + `--shadow-soft` (`--transition-normal`)                                                                                      |
+
+### 15.7 Blok 6 – The Treatment & What to Expect (`.svc-treatment`)
+
+**Layout**: latar putih, `id="treatment"`, padding `5rem 0 4rem`.
+
+| Elemen        | Spesifikasi                                                                                                                                                                  |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| H2            | **The Treatment &** / _What to Expect_ – terpusat, 2 baris, serif 600 `clamp(2.4rem, 4vw, 3.2rem)`, `margin-bottom 3rem`                                                    |
+| Grid          | `.svc-treatment-grid`: `grid-template-columns: 1.1fr 1fr`, `gap 3.5rem`, `align-items: stretch`                                                                              |
+| Kartu (`.svc-panel`) | Latar putih, `border: 1px solid #ececea`, `border-radius 8px`, `box-shadow var(--shadow-soft)`, padding `2.25rem 2rem 2.5rem`                                         |
+| Judul kartu   | Serif **miring** 600 `1.9rem` navy, terpusat; sub-judul serif miring `.95rem` sage-deep, terpusat, `margin-bottom 1.5rem`                                                    |
+| Kiri – baris protokol | `<ol class="svc-steps">`, `gap .7rem`; tiap `<li>`: latar `#e8e8e6`, `border-radius 3px`, `min-height 3.6rem`, padding `.8rem 1.15rem`, flex `align-items center gap 1.1rem`; nomor serif miring 600 `1.35rem` navy (lebar `2rem`); teks `.82rem` navy |
+| Kanan – butir hasil | `<ul class="svc-outcomes">`, `gap 1.6rem`; tiap `<li>` flex `gap 1rem`: lingkaran ikon 30px (`background rgba(138,162,155,.18)`, ikon Phosphor Light `1rem` sage-deep: `ph-seal-check`, `ph-pulse`, `ph-list-checks`) + teks `.82rem` `line-height 1.6`; label (**Headline:**, **Deskripsi:**, **Hasil:**) = `<strong>` navy |
+| Kutipan       | `<blockquote class="svc-quote">`: terpusat, Montserrat 400 `.85rem`, navy 85%, `max-width 760px`, `margin: 2.75rem auto 0`; tanda kutip lurus `" "` seperti gambar                  |
+
+### 15.8 Blok 7 – CTA Band (`.svc-cta`)
+
+**Layout**: latar `--color-sage-soft`, padding `3rem 0`, `container` flex `justify-content: space-between; align-items: center; gap 2rem`.
+
+| Elemen   | Spesifikasi                                                                                                                                       |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| H2       | **Discuss your** _Body Contouring_ – serif 600 `clamp(1.9rem, 3vw, 2.4rem)`, `.accent` pada _Body Contouring_                                     |
+| Paragraf | `.82rem`, navy, `max-width 460px`, `margin-top .5rem`                                                                                              |
+| Tombol   | Kelas baru `.btn-navy` (di `service.css`): latar `--color-navy`, teks putih, `font-weight 500`, `.85rem`, `text-transform: none`, `letter-spacing .02em`, padding `.95rem 2rem`, `border-radius pill`; hover → `--color-navy-hover` + `translateY(-2px)`; isi _Contact the Clinic_ + `ph-arrow-right`; `href="contact.html"` |
+
+### 15.9 Palet & Token Tambahan
+
+| Token (lokal di `service.css`)                | Nilai       | Dipakai pada                                              |
+| --------------------------------------------- | ----------- | --------------------------------------------------------- |
+| `--svc-gray`                                  | `#e8e8e6`   | Latar blok 5 & baris protokol (setara `--color-border`)   |
+| `--svc-line`                                  | `#d9d9d6`   | Garis pemisah daftar indikasi                             |
+| `--color-sage-deep`                           | `#5f7a73`   | Teks kecil sage (kontras ≈ 4.9:1 di atas putih) — sedikit lebih tua dari sage gambar agar lolos WCAG AA |
+
+Warna lain memakai token yang ada (`--color-bg`, `--color-sage`, `--color-sage-soft`, `--color-navy`, `--color-navy-hover`, `--shadow-subtle`, `--shadow-soft`, `--radius-*`).
+
+### 15.10 Navigasi
+
+| Lokasi                                                         | Sekarang    | Perubahan                                                            |
+| -------------------------------------------------------------- | ----------- | -------------------------------------------------------------------- |
+| `index.html` / `about.html` / `contact.html` – mega-menu _Clinical Cellulite Remodelling_ | `#services` / `index.html#services` | `cellulite-remodelling.html` (hanya item ini; item lain tidak diubah) |
+| `cellulite-remodelling.html` – menu Home / About / Our Clinic / Contact Us | – | `index.html`, `about.html`, `index.html#difference`, `contact.html` |
+| `cellulite-remodelling.html` – item mega-menu lain, footer _Our Service_ | – | `index.html#services`                                                |
+| `cellulite-remodelling.html` – tombol _Book an Appointment_    | –           | `contact.html#contact-form`                                          |
+| Hero _Learn More_ → `#treatment`; CTA _Contact the Clinic_ → `contact.html` | – | seperti tabel                                                        |
+
+### 15.11 Responsif
+
+| Lebar    | Perilaku                                                                                                                                                                                  |
+| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ≥ 1200px | Layout seperti gambar                                                                                                                                                                     |
+| ≤ 1200px | Gap kolom hero `3rem`, indikasi `3.5rem`; grid treatment `gap 2.5rem`                                                                                                                      |
+| ≤ 992px  | Hero → 1 kolom (teks lalu foto `aspect-ratio 4/3`); Indikasi → 1 kolom (**foto di atas teks**, `aspect-ratio 4/3`); Treatment → 1 kolom (Clinical Protocol lalu Treatment Approaches); Types tetap 3 kolom dengan padding kartu `1.75rem 1.25rem`; CTA tetap sebaris |
+| ≤ 768px  | Section `3.5rem 0`; H1 `2.5rem` (`<br>` dinonaktifkan); Types → **1 kolom** (maks. lebar 480px, terpusat); CTA → kolom (teks di atas, tombol di bawah, rata kiri)                           |
+| ≤ 480px  | 3 poin hero → vertikal; kartu `.svc-panel` padding `1.75rem 1.25rem`; baris protokol `min-height 3.2rem`; tombol _Learn More_ & _Contact the Clinic_ lebar penuh                           |
+
+**Aksesibilitas & kualitas**: satu `<h1>`; `<ol>` untuk daftar bernomor; ikon dekoratif `aria-hidden="true"`; `alt` deskriptif pada 2 foto; `prefers-reduced-motion` mematikan hover/entrance; fokus keyboard terlihat; gambar bawah-lipatan `loading="lazy"`; ID unik pada elemen interaktif (`svc-learn-more-btn`, `svc-contact-btn`).
+
+### 15.12 Urutan Eksekusi
+
+1. Siapkan aset `cellulite-hero.jpg` & `cellulite-consult.jpg` (kompres, < 150 KB masing-masing).
+2. Buat `cellulite-remodelling.html`: salin Topbar/Navbar/Footer dari `contact.html`, atur tautan & status aktif (15.10).
+3. Buat `css/service.css`: token lokal + `.btn-navy` + blok 3 (15.4).
+4. Bangun blok 4 (15.5) dan blok 5 (15.6).
+5. Bangun blok 6 (15.7) dan blok 7 (15.8).
+6. Perbarui tautan mega-menu pada `index.html`, `about.html`, `contact.html` (15.10).
+7. **Cocokkan dengan gambar** (checklist kesesuaian di bawah) pada lebar 1440 px, lalu uji responsif (1536 / 1280 / 1024 / 768 / 390px), keyboard, konsol.
+
+**Checklist kesesuaian visual terhadap gambar (wajib lulus)**
+- [x] H1 tampil **4 baris**: _Treatment for / Cellulite, Fluid / Retention & Tissue / Congestion_, dengan _Tissue Congestion_ sage miring.
+- [x] Hero: label kecil, paragraf 4 baris, tombol sage, dan 3 poin ikon berada **di kolom kiri**, foto torso di kolom kanan.
+- [x] Foto 2 terapis berada di **kiri**, teks di **kanan**; daftar 01–05 dengan garis tipis pemisah.
+- [x] Blok abu: judul 2 baris (baris 2 sage miring), paragraf terpusat 2 baris, **3 kartu putih sama tinggi** dengan judul miring.
+- [x] _The Treatment & What to Expect_: 2 kartu berdampingan; kiri 4 baris abu bernomor, kanan 3 butir berikon; kutipan terpusat di bawahnya.
+- [x] CTA band sage-soft: judul + paragraf di kiri, tombol **navy** di kanan; footer navy di bawahnya.
+- [x] Urutan warna latar: krem → putih → abu → putih → sage-soft → navy.
+
+**Checklist – Halaman Layanan (15.1 – 15.12)**
+- [x] Aset 2 foto siap dan terkompres.
+- [x] `cellulite-remodelling.html` (meta SEO, OG, JSON-LD, satu `<h1>`, ID unik).
+- [x] Topbar/Navbar/Footer berfungsi; _Our Services_ aktif; mega-menu menandai halaman ini.
+- [x] Blok 3–7 selesai sesuai spesifikasi dan lulus checklist kesesuaian visual.
+- [x] Tautan mega-menu _Clinical Cellulite Remodelling_ di 3 halaman lain mengarah ke halaman baru.
+- [x] Responsif 1200 / 992 / 768 / 480px; tidak ada teks menumpuk atau terpotong.
+- [x] Kontras & fokus keyboard memadai; konsol bersih; halaman lain tidak berubah selain tautan mega-menu.
+
+**Kriteria selesai Revisi 6**
+- Halaman tampil **sesuai gambar desain** pada desktop (urutan blok, pemenggalan judul, komposisi kolom, warna latar) dan rapi pada tablet & mobile.
+- Gaya konsisten dengan Home/About/Contact; `service.css` dapat dipakai ulang sebagai templat layanan.
+- Navigasi berfungsi; tidak ada error pada konsol.
+
+**Poin diskusi (mohon konfirmasi sebelum eksekusi)**
+1. **Aset foto**: foto pada gambar hanya ±160–200 px lebar sehingga **tidak bisa di-crop** (akan buram). Mohon sediakan 2 file asli (min. 1000 px lebar): foto torso dengan glow merah dan foto 2 terapis. Bila ada di `D:\Documents\assets`, sebutkan nama berkas.
+2. **Teks bertanda ⚠**: (a) 3 poin kecil di hero tidak terbaca (poin 1) — mohon teks asli; (b) deskripsi 3 kartu tipe selulit tampak **tersalin dari halaman pasca-operasi** (_"…your specific surgery…"_, _"…your surgical structures"_) dan tidak relevan untuk selulit — pakai persis seperti gambar atau Anda beri teks baru?; (c) label **Deskripsi** / **Hasil** berbahasa Indonesia sedangkan **Headline** berbahasa Inggris — pakai apa adanya atau diseragamkan menjadi _Headline / Description / Result_ (rekomendasi)?; (d) nama **CELInetic International** — ejaan sudah benar?; (e) _stubborn areas_ ditulis huruf kecil di gambar — boleh dikapitalisasi?
+3. **Footer**: gambar menampilkan footer 3 kolom lama; rancangan ini tetap memakai **footer 2 tingkat** agar konsisten dengan halaman lain. Setuju?
+4. **Warna teks sage kecil**: gambar memakai sage terang (kontras rendah). Rancangan memakai `#5f7a73` (sedikit lebih tua) agar terbaca. Setuju, atau harus persis seperti gambar?
+5. **Nama berkas halaman**: `cellulite-remodelling.html` (rekomendasi) atau nama lain?
+6. **Cakupan templat**: apakah 11 halaman layanan lain (mega-menu) akan dibuat menyusul dengan templat yang sama? Sementara itu tautannya tetap ke `#services`.
+7. **Tombol _Learn More_** pada hero: scroll ke blok _Treatment_ (`#treatment`, rekomendasi) atau ke halaman/blok lain?
+
